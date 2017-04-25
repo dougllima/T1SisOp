@@ -4,6 +4,7 @@
 public class Logger {
     public int qntF;
     public static FilosofoLog[] log;
+    public static boolean acabou = false;
 
     class FilosofoLog {
         int index;
@@ -23,8 +24,18 @@ public class Logger {
 
     public Logger(int qntF) {
         this.qntF = qntF;
+        log = new FilosofoLog[qntF];
         for (int i = 0; i < qntF; i++) {
             log[i] = new FilosofoLog(i);
+        }
+    }
+
+    public static void Fim(){
+        if(!acabou) {
+            acabou = true;
+            for (FilosofoLog l : log) {
+                System.out.println(l.toString());
+            }
         }
     }
 
