@@ -24,7 +24,7 @@ public class Filosofo implements Runnable {
         // assim garante que não passa do tempo estipulado.
         while (System.currentTimeMillis() <= (endTime - 5000)) {
             //se não comeu duas vezes seguidas, tenta pegar o garfo da esquerda
-            if (cont < qnt && lFork.tryAcquire(1)) {
+            if (cont < 5 && lFork.tryAcquire(1)) {
                 //se pegou o garfo da esquerda, tenta pegar o garfo da direita
                 if (rFork.tryAcquire(1)) {
                     //se pegou os dois, come por 2 segundos e solta os garfos

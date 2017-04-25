@@ -22,7 +22,7 @@ public class Mesa {
         }
         for (int i = 0; i < qnt; i++) {
             int left = i == 0 ? qnt - 1 : i - 1,
-                    right = i == (qnt - 1) ? 0 : i + 1;
+                    right = i == (qnt - 1) ? 0 : i;
             //inicial cada filosofo, associando o garfo de antes e depois
             filosofos[i] = new Filosofo(i, qnt, forks[left], forks[right]);
         }
